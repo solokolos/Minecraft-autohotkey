@@ -8,13 +8,42 @@ High stress situations demand it be as consistent as possible.
 
 Xbutton1 & `::
     Send, e
+    /*
+    Opens inventory.
+    */
         Mousemove, 671, 563
+                /*
+                Moves mouse to the screen position of the 1st inventory slot. 
+                This position will change if you don't have a 1920*1080 monitor. 
+                There is no sleep timer before this because the inventory doesn't seem to have a latency at all.
+                */
             Sleep 10
+                /*
+                If the orders go too fast then it can confuse Minecraft. 
+                This gives it time to react to the new mouse placement for the next step.
+                */
             Send {LButton}
+                /*
+                Picks up the armor piece. 
+                No sleep timer after this as it is very consistent with picking up an item on the first frame.
+                */
         Mousemove, 669, 323
+                /*
+                Moves the armor piece over the chestplate slot.
+                If there is no armor here it will just place it on the next command, and take it off if repeated.
+                If there is an item here, it switches the two items.
+                */
             Sleep 10
             Send {LButton}
+                /*
+                Actually switches the armor pieces.
+                */
         Mousemove, 671, 563
+                /*
+                Moves back to original inventory position, again dependant on resolution. 
+                If you want to change the corridinates, run windows spy AutoHotKey program that comes with the windows installation.
+                Place the mouse over the correct inventory slot with minecraft windowed, and then change the coordinates for each one of these.
+                */
             Sleep 10
             Send {LButton}
     Send, e
@@ -86,4 +115,10 @@ Edit note:
 Certain delays on the armor switch block were unnecessary. 
 Removed them, and dcreased the sleep delay by 30. 
 Also moved the mosts relevant script to the top.
+*/
+
+/*
+Edit note: 
+5/7/2018; 3:42 pm PST
+Added more comments to the first code block.
 */
