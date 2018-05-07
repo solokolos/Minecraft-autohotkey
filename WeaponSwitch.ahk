@@ -1,8 +1,30 @@
 /*
-This first set replaces the item in your 1st inventory slot with the item in the slot directly above it. 
-It also normally moves the screen a bit, which is unavoidable without a longer sleep timer. 
+Code used in the video, this is mouse 4 and the tilde key. 
+This script is very consistent, and is very close to not moving the screen. 
+You can even speed it up by reducing the sleep timers, though I didn't do that too much, as it is a little dangerous. 
+It picks up the armor after all, and if it goes too quickly it could throw the armor on the ground. 
+High stress situations demand it be as consistent as possible.
+*/
+
+Xbutton1 & `::
+    Send, e
+        Mousemove, 671, 563
+            Sleep 10
+            Send {LButton}
+        Mousemove, 669, 323
+            Sleep 10
+            Send {LButton}
+        Mousemove, 671, 563
+            Sleep 10
+            Send {LButton}
+    Send, e
+return
+
+/*
+This first set replaces the item in your 1st inventory slot with the item in the slot directly above it.
+It also normally moves the screen a bit, which is unavoidable without a longer sleep timer.
 I haven't tested out the exact time needed to keep the screen still. 
-The command for this is Mouse4 (xbutton1 is mouse 4, xbutton2 is mouse 5). 
+The command for this is Mouse 4 and 1 (xbutton1 is mouse 4, xbutton2 is mouse 5). 
 Xbutton 1 is also used for the back key on most systems.
 */
 Xbutton1 & 1::
@@ -44,7 +66,8 @@ Xbutton1 & 3::
 return
 
 /*
-Switches to my torches and places it, before switching back. A bit inconsistent, but changes 3 button presses to 2. 
+Switches to my torches and places it, before switching back. 
+A bit inconsistent, but changes 3 button presses to 2. 
 Also uses mouse 5 (forward button on Windows) instead of mouse 4
 */
 
@@ -58,26 +81,9 @@ Xbutton2 & Rbutton::
 return
 
 /*
-Code used in the video, this is mouse 4 and the tilde key. 
-This script is very consistent, and is very close to not moving the screen. 
-You can even speed it up by reducing the sleep timers, though I didn't as it is a little dangerous. 
-It picks up the armor after all, and if it goes too quickly it could throw the armor on the ground. 
-High stress situations demand it be as consistent as possible.
+Edit note: 
+5/7/2018; 3:30 pm PST
+Certain delays on the armor switch block were unnecessary. 
+Removed them, and dcreased the sleep delay by 30. 
+Also moved the mosts relevant script to the top.
 */
-
-Xbutton1 & `::
-    Send, e
-        Mousemove, 671, 563
-            Sleep 10
-            Send {LButton}
-            Sleep 10
-        Mousemove, 669, 323
-            Sleep 10
-            Send {LButton}
-            Sleep 10
-        Mousemove, 671, 563
-            Sleep 10
-            Send {LButton}
-            Sleep 10
-    Send, e
-return
