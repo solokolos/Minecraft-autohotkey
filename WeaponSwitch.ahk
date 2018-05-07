@@ -1,5 +1,9 @@
 /*
-This first set replaces the item in your 1st inventory slot with the item in the slot directly above it. It also normally moves the screen a bit, which is unavoidable without a longer sleep timer. I haven't tested out the exact time needed to keep the screen still. The command for this is Mouse4 (xbutton1 is mouse 4, xbutton2 is mouse 5). Xbutton 1 is also used for the back key on most systems.
+This first set replaces the item in your 1st inventory slot with the item in the slot directly above it. 
+It also normally moves the screen a bit, which is unavoidable without a longer sleep timer. 
+I haven't tested out the exact time needed to keep the screen still. 
+The command for this is Mouse4 (xbutton1 is mouse 4, xbutton2 is mouse 5). 
+Xbutton 1 is also used for the back key on most systems.
 */
 Xbutton1 & 1::
     Send, e
@@ -40,7 +44,8 @@ Xbutton1 & 3::
 return
 
 /*
-Switches to my torches and places it, before switching back. A bit inconsistent, but changes 3 button presses to 2. Also uses mouse 5 (forward button on Windows) instead of mouse 4
+Switches to my torches and places it, before switching back. A bit inconsistent, but changes 3 button presses to 2. 
+Also uses mouse 5 (forward button on Windows) instead of mouse 4
 */
 
 Xbutton2 & Rbutton::
@@ -53,7 +58,11 @@ Xbutton2 & Rbutton::
 return
 
 /*
-Code used in the video, this is mouse 4 and the tilde key. This script is very consistent, and is very close to not moving the screen. You can even speed it up by reducing the sleep timers, though I didn't as it is a little dangerous. It picks up the armor after all, and if it goes too quickly it could throw the armor on the ground. High stress situations demand it be as consistent as possible.
+Code used in the video, this is mouse 4 and the tilde key. 
+This script is very consistent, and is very close to not moving the screen. 
+You can even speed it up by reducing the sleep timers, though I didn't as it is a little dangerous. 
+It picks up the armor after all, and if it goes too quickly it could throw the armor on the ground. 
+High stress situations demand it be as consistent as possible.
 */
 
 Xbutton1 & `::
